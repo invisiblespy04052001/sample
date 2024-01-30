@@ -1,0 +1,13 @@
+{
+  "name": "Submit Lemonade Order",
+  "description": "Heroku Connect Sample App - Lemonade Order",
+  "repository": "https://github.com/arupsarkar/sample-hc-app",
+  "success_url": "/setup.html",
+  "addons": ["heroku-postgresql", "herokuconnect:demo"],
+  "env": {
+    "PGSSLMODE": {
+      "description": "Require SSL for Postgres",
+      "value": "require"
+    }
+  }
+}

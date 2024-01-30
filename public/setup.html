@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Phone Changer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<br>
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Lemonade Order App</a>
+        </div>
+    </div>
+</nav>
+</br>
+</br>
+
+<div class="container">
+    <div class="well">
+        <h4>Your application has been deployed!  Additional verification and setup is needed for this app to work.</h4>
+    </div>
+    </br>
+    </br>
+    <div>
+        <h2>Step 1) Setup a Salesforce Developer Organization</h2>
+
+        <p>To get a development environment on Salesforce, <a href="https://developer.salesforce.com/signup">signup for a new Salesforce Developer Organization</a>.</p>
+
+        <p>After you have verified your email and logged into Salesforce, find the contact in the system, click on the contact to submit a lemonade order.</p>
+
+
+        <h2>Step 2) Heroku postgres Add-On is already provisioned. Verify</h2>
+        <p>The simplicity and speed of this hides the complexity of what you should did.  With just a click, you provisioned one of 150 add-on services, in this case a relational database.  The service is fully managed, is already running, and is now connected to your application.  </p>
+
+        <p>Heroku typically connects a provisioned add-on to an application by setting a configuration variable - available as a runtime environment variable within the application.</p>
+
+        <ol>
+            <li>In the Dashboard, select your application, and then click on the <strong>Settings</strong> tab.</li>
+            <li>In the <strong>Config Variables</strong> section, click <strong>Reveal Config Vars</strong> - you will notice the <code>DATABASE_URL</code> is now set.</li>
+        </ol>
+
+
+        <h2>Step 3) Heroku Connect Add-on is already provisioned. Verify</h2>
+
+        <p>Applications running on Heroku can use a number of different methods to integrate with Salesforce data including the <a href="http://www.salesforce.com/us/developer/docs/api_rest/">Salesforce REST APIs</a>.  An easier approach is to use the  <a href="https://www.heroku.com/connect">Heroku Connect</a> add-on.  </p>
+
+        <p>Heroku Connect provides bi-directional synchronization between Salesforce and Heroku Postgres, allowing you to unify and share the data in a Heroku Postgres SQL database with the contacts, accounts and other custom objects in a Salesforce database.  </p>
+
+
+        <ol>
+            <li>Click on the newly added <strong>Heroku Connect</strong> add-on to configure the syncing, and click <strong>Begin Setup</strong>.</li>
+        </ol>
+        <p>Heroku Connect automatically locates the Heroku Postgres database that is provisioned .  </p>
+
+        <ol>
+            <li>Click <strong>Next</strong> and then <strong>Authorize</strong></li>
+        </ol>
+
+        <p>Now set up Heroku Connect:  </p>
+
+        <ol>
+            <li>Authorize Heroku Connect to access your Salesforce Org, logging into Salesforce if asked to:</li>
+            <li>Create a mappings between the Contact object in Salesforce, and a table in the Heroku Postgres database. <br />
+                <ol>
+                    <li>Click <strong>Create Mapping</strong>.</li>
+                    <li>Select the <strong>Drink Order</strong> object</li>
+                    <li>In the <strong>Database  Salesforce</strong> section, check the "Write to Salesforce any updates to your database" option.</li>
+                    <li>In the <strong>Mapped Fields</strong> section, check the <strong>Size</strong>, <strong>Price</strong>, <strong>Flavor</strong> fields. <br />
+                    </li>
+                    <li>Click <strong>Save</strong></li>
+                </ol></li>
+            <li>Once you've completed the mapping setup the data will begin synchronizing
+            </li>
+        </ol>
+
+        <p>Your application, via Heroku Connect, is now syncing (bi-directionally) a subset of the Drink Order object in Salesforce with a new table in the Heroku Postgres database associated with your app.</p>
+
+
+        <h2>Step 4) Test Your App</h2>
+        <p>Open <a href="/" target="_blank">Lemonade Order App</a> Click on a contact, submit a lemonade order. Verify the order got submitted for the contact in salesforce.</p>
+
+    </div>
+</div>
+</body>
+</html>
